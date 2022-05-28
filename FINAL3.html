@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+
+/* ************* Rock, Paper, Scissors Game Logic ***************
+
+Rock beats scissors.
+Paper beats rock.
+Scissors beat paper.
+
+************* Rock, Paper, Scissors Code Below*************** */
+
+var playerResult;
+var roboResult;
+var outcomes = ["none", "Rock", "Paper", "Scissors"];
+var output;
+
+function play() {
+	output = "";
+	playerGuess();
+	roboGuess();
+	showResult();
+}
+
+function playerGuess() {
+	playerResult = document.getElementById("choices").value;
+	output += "Player picks: " + outcomes[playerResult] + "</br>"
+}
+//  syntax error capital G in guess
+function roboGuess() {
+	roboResult = Math.ceil(Math.random()*3);
+	output += "Robot picks: " + outcomes[roboResult] + "</br>"
+}
+
+function showResult() {
+	if (playerResult == 0) {
+    //  syntax error missing a '+' after output
+	output += "Pick Rock, Paper, or Scissors";
+	} else if (playerResult == roboResult) {
+    output += ("Tie. Again?");
+    //  syntax error needs 2 equal signs at the end of this else if
+  } else if (playerResult - roboResult == 1 ) {
+    output += ("Player wins!");
+    /*  game play functionality error and code logic error added another
+    else if statement to cover the rest of possible "Player wins!"*/
+  } else if (playerResult - roboResult == -2 ) {
+    output += ("Player wins!");
+    } else {
+    output += ("Robot wins!");
+    }
+	document.getElementById("showme").innerHTML = output;
+}
+
+</script>
+<body>
+<!--syntax error changed uppercase H to lowercase h on h1 and h2 heading-->
+<h1> Rock, Paper, Scissors </h1>
+
+<h2> Beat the Robot! </h2>
+
+<select id = "choices" >
+ <option value="0">Pick one</option>
+  <option value="1">Rock</option>
+  <option value="2">Paper</option>
+  <option value="3">Scissors</option>
+</select>
+
+</br></br>
+
+<input type="button"  value = "Play!" onclick = "play()"></input>
+
+<p id ="showme"></p>
+</body>
+</html>

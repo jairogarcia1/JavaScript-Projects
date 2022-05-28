@@ -1,0 +1,58 @@
+<html>
+<body>
+
+<p id="demo"></p>
+<h2>"3 cards have been dealt"</h2>
+<script>
+//global variables for every suit and rank in the deck
+const suits = ["Hearts", "Diamonds", "Spades", "Clubs"];
+const ranks = ['2', ' 3', ' 4',' 5',' 6',' 7',' 8',' 9',' 10',' J',' Q',' K',' A']
+//empty deck array used to hold ranks and suits arrays
+let deck = [];
+
+// pushes ranks and suits array into deck
+function createDeck() {
+for (let i = 0; i < 4; i++) {
+	for (let j = 0; j < 13; j++) {
+    deck.push(ranks[j] + " of " + suits[i]);
+    }
+  }
+}
+
+//calling the function
+createDeck();
+//empty array for the hand
+let hand = ["empty", "empty", "empty"];
+//counts cards for the hand
+let k = 0;  
+//draw till 3 cards are dealt
+while (hand[2] == "empty"){   
+
+// pick a card
+var picked = Math.floor(Math.random()*52);
+
+//check for duplications, then deal
+ // if body
+if (deck[picked] != " DEALT") {
+   hand[k] = deck[picked];
+   deck[picked] = " DEALT";
+   k++;
+   } 
+} // while body
+
+//test code
+alert("Player hand: " + hand.join(" | "));
+document.write("<p>in order of card index number</p>");
+document.write(deck.join(" ,") + "</br></br>");
+document.write("<p>in reverse order of card index number</p>");
+deck.reverse();
+document.write(deck.join(" ~") + "</br></br>");
+document.write("<p>Random</p>");
+deck.sort(function (a, b){return (0.5 - Math.random())});
+document.write(deck.join(" \\ ") + "</br></br>");
+
+
+</script>
+
+</body>
+</html>

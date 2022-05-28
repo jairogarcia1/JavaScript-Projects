@@ -1,0 +1,62 @@
+<!--Math requirements checker for BAS Application Dedvelopment at NSC-->>
+<html>
+<body>
+
+<h1>Math Requirements Checker</h1>
+<h2>Please enter the highest math class you have completed at North Seattle College.</h2>
+
+<p>MATH / MATH &<br/>Please enter class #</p>
+<input id="mathNum" value=" " />
+
+
+<button onclick="classChecker()">Submit</button>
+
+
+<p id="demo"></p>
+
+<script>
+// this functions checks for every math class number in sequence and presents the user with the next prerequisites at NSC
+
+function classChecker() {
+  // declaring the local variables
+  let mathClass;
+  let mathNum = Number(document.getElementById("mathNum").value);
+  // the user can ONLY input numbers 
+  // if the user has taken MATH& 151/146/148 the user has taken enough math to appply for the program
+  if (isNaN(mathNum)) {
+    mathClass = "Please enter a valid MATH / MATH& class #";
+  } else if (mathNum == 081) {
+  	mathClass = "You should take either MATH 097 or MATH 084";
+  } else if (mathNum == 084) {
+  	mathClass = "You should take MATH 085";
+  } else if (mathNum == 085) {
+  	mathClass = "You should take MATH 098";
+  } else if (mathNum == 097) {
+  	mathClass = "You should take either MATH 099 or MATH 098";
+  } else if (mathNum == 098) {
+  	mathClass = "You should take either MATH 116 or MATH &141";
+  } else if (mathNum == 099) {
+  	mathClass = "You should take MATH &146";
+  } else if (mathNum == 107) {
+  	mathClass = "You should take MATH &146";
+  } else if (mathNum == 116) {
+  	mathClass = "You should take MATH &148";
+  } else if (mathNum == 141) {
+  	mathClass = "You should take MATH &142 / MATH &146";
+  } else if (mathNum == 142) {
+  	mathClass = "You should take MATH &151";
+  } else if (mathNum == 146) {
+  	mathClass = "You have enough math to apply for admission to the BAS in 					Application Development";
+  } else if (mathNum == 148) {
+  	mathClass = "You have enough math to apply for admission to the BAS in 					Application Development";
+  } else if (mathNum == 151) {
+  	mathClass = "You have enough math to apply for admission to the BAS in 					Application Development";
+  } else {
+    mathClass = (mathNum < 151) ? "You should take MATH 081" : "You have 					enough math to apply for admission to the BAS in 							Application Development";
+  }
+  document.getElementById("demo").innerHTML = mathClass + " at NSC.";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var output = "";
+
+var NorthSound = ["Bainbridge", "Whidbey", "Blake"];
+
+//1) define a new array called SouthSound with elements "Ketron", "Anderson", "Fox", "Harstine"
+var SouthSound = ["Ketron", "Anderson", "Fox", "Harstine"];
+//2) Combine NorthSound with SouthSound to make a new array called PugetSound.
+var PugetSound = NorthSound.concat(SouthSound);
+output+=PugetSound.toString() + "<br>";
+
+//3)Put "Camano" on the left hand end of PugetSound.
+PugetSound.unshift("Camano");
+output+=PugetSound.toString() + "<br>";
+
+//4) Put "Herron" on the right hand end of PugetSound.
+PugetSound.push("Herron");
+output+=PugetSound.toString() + "<br>";
+
+//5) Alphabetize PugetSound.
+PugetSound.sort();
+output+=PugetSound.toString() + "<br>";
+
+//6) Remove the last element on the right hand side of PugetSound.
+PugetSound.pop();
+output+=PugetSound.toString() + "<br>";
+
+//7) Replace Harstine and Herron with Fidalgo.
+PugetSound.splice(PugetSound.indexOf("Harstine"), 2, "Fidalgo");
+output+=PugetSound.toString() + "<br>";
+
+//8) Place PugetSound into reverse alphabetical order.
+PugetSound.reverse();
+output+=PugetSound.toString() + "<br>";
+
+//9) Sort PugetSound at random.
+PugetSound.sort(function(a, b){return 0.5 - Math.random()});
+output+=PugetSound.toString() + "<br>";
+
+//10 Test code (missing "output")
+document.getElementById("demo").innerHTML = output;   //Finish This!
+
+/* Sample Output (last line may vary)
+Bainbridge,Whidbey,Blake,Ketron,Anderson,Fox,Harstine
+Camano,Bainbridge,Whidbey,Blake,Ketron,Anderson,Fox,Harstine
+Camano,Bainbridge,Whidbey,Blake,Ketron,Anderson,Fox,Harstine,Herron
+Anderson,Bainbridge,Blake,Camano,Fox,Harstine,Herron,Ketron,Whidbey
+Anderson,Bainbridge,Blake,Camano,Fox,Harstine,Herron,Ketron
+Anderson,Bainbridge,Blake,Camano,Fox,Fidalgo,Ketron
+Ketron,Fox,Fidalgo,Camano,Blake,Bainbridge,Anderson
+Fidalgo,Fox,Bainbridge,Ketron,Camano,Blake,Anderson
+*/
+
+</script>
+
+</body>
+</html>

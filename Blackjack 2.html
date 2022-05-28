@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Blackjack</h1>
+
+<script>
+//declaring global variables
+var card = 0;
+var total = 0;
+var hitMe = true;
+var dealer = 0;
+
+//this loops while values stay under 21
+while (hitMe && total <= 21 && dealer <= 21) {
+	startGame();
+    dealersHand();
+}
+// calls function to present results at the end of the game
+result();
+
+
+
+//My Functions
+
+//this function is used to loop while user enters "Y/y" and sums the value for total
+function startGame() {
+	hitMe = prompt("Current total: " + total, "Take a card? Y/N");
+	if (hitMe == ("Y" && "y")){hitMe = true;
+    } else {
+    hitMe = false;
+    }
+	if(hitMe) {
+	card = Math.ceil(11*Math.random());
+	total += card;
+	}
+}
+
+
+//final total
+function dealersHand() {
+	dealer = Math.ceil(11*Math.random()) + Math.ceil(11*Math.random());
+	}
+ //dealer always takes 2 cards
+function result() {
+	alert("Your hand is worth " + total + ". Dealer got " + dealer + ". Good game!");
+	}
+    
+
+</script>
+
+</body>
+</html>

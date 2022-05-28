@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- HTML Table for Testing Purposes -->
+<table id = "myTable" style="border: 30px solid orange; font-size: 20px; font-weight: bolder">
+<tr id = "row1" style = "color: black" >
+<td id = "1.1" style = "border: 15px solid Green">Row 1 Col 1</td>
+<td id = "1.2" style = "border: 15px solid Green">Row 1 Col 2</td>
+</tr>
+</table>
+<!--Buttons to Launch a Function -->
+<br>
+<button type="submit" onclick = "changeTextColor()">Change</button>
+<button type="submit" onclick = "changeBorderColor()">Change Border Color</button>
+<button type="submit" onclick = "changeFontSize()">Change Font Size</button>
+<button type="submit" onclick = "changeFontWeight()">Change Font Weight</button>
+
+<script>
+// First JavaScript Function
+// Changes text color from red to black and back again
+function changeTextColor() {
+	var textcolor = document.getElementById("row1").style.color;
+	if (textcolor== "red") {
+    textcolor = "black";
+    } else {
+    textcolor = "red";
+    }
+document.getElementById("row1").style.color = textcolor;
+}
+
+// Changes border color from orange to teal and back again
+function changeBorderColor() {
+	var borderColor = document.getElementById("myTable").style.borderColor;
+	if (borderColor== "orange") {
+    borderColor = "teal";
+    } else {
+    borderColor = "orange";
+    }
+document.getElementById("myTable").style.borderColor = borderColor;
+}
+
+// Changes font size from 20px to 40px and back again
+function changeFontSize() {
+	var fontSize = document.getElementById("myTable").style.fontSize;
+	if (fontSize == "20px") {
+    fontSize = "40px";
+    } else {
+    fontSize = "20px";
+    }
+document.getElementById("myTable").style.fontSize = fontSize;
+}
+
+// Changes font weight from bolder to lighter and back again
+function changeFontWeight() {
+	var fontWeight = document.getElementById("myTable").style.fontWeight;
+	if (fontWeight == "bolder") {
+    fontWeight = "lighter";
+    } else {
+    fontWeight = "bolder";
+    }
+document.getElementById("myTable").style.fontWeight = fontWeight;
+}
+</script>
+
+
+
+</body>
+</html>

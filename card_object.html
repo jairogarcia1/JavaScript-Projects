@@ -1,0 +1,37 @@
+<html>
+<body>
+
+<script>
+//constructor/object prototype
+function Card(rank, suit, isVisible) {
+ 	this.rank = rank;
+ 	this.suit = suit;
+ 	this.isVisbile = false;
+	//function shows the card by displaying true
+	this.show = function() {
+	this.isVisible = true
+	return this.isVisible
+	}
+	//hides the card by displaying false
+	this.hide = function() {
+	this.isVisible = false
+	return this.isVisible
+	}
+}
+//declaring my variables for both cards
+let card1 = new Card("Ace", "Spades");
+let card2 = new Card("Jack", "Hearts");
+
+//alert test to hide card1 and show card2
+card1.hide();
+alert(card1.rank + " of " + card1.suit +" Visible: "+ card1.isVisible);
+card2.show();
+alert(card2.rank + " of " + card2.suit +" Visible: "+ card2.isVisible);
+
+
+
+
+</script>
+
+</body>
+</html>

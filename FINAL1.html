@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+<script>
+function Truck(gas, mpg) {
+  this.gas = gas;
+  //  moved range out of fill() and made an mpg property
+  this.mpg = mpg;
+  this.range = this.gas * this.mpg;
+
+    if (this.gas <= 0) {
+	  this.empty = true;
+    } else {
+    //  completed if statement with new else line
+	  this.empty = false;
+    }
+  //  drive method
+  this.drive = function (miles) {
+	this.gas -= miles/this.mpg;
+	if(this.gas <= 0) {
+	this.empty = true;
+    }
+  };
+  //  fill method
+  this.fill = function (gallons){
+  //  fill() updates gas and updates empty
+	this.gas = gallons;
+  this.empty = false;
+  };
+}
+
+//test code
+test = new Truck(20, 15);
+
+alert ("The range is: " + test.range); //expected output = a positive number
+test.drive(300);
+alert ("Empty after the drive? " + test.empty); //expected output = true
+test.fill(10);
+alert ("Empty after the fill? " + test.empty ); //expected output = false
+//  multiplied by half to alert new range
+alert ("The range is now: " + .5 * test.range + " miles."); //expected output = 150
+
+</script>
+</body>
+</html>
